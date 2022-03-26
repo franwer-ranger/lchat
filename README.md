@@ -2,6 +2,8 @@
 
 ### El proyecto **lchat** es una aplicación hecha en Ruby on Rails que permite la comunicación entre grupos de personas en tiempo real.
 
+------
+<br/> 
 
 <div style="width: 100%; background: white; text-align: center; margin: 1rem auto; align: center;">
   <img
@@ -11,18 +13,24 @@
 </div>
 
 >[Ruby on Rails](https://rubyonrails.org/) es un framework MVC (Modelo Vista Controlador) de Ruby que proporciona herramientas para crear una aplicación web fullstack de una manera bastante sencilla, ya que asume un monton de cosas que necesitas para empezar a hacer una aplicación.<br/> 
-Un punto importante para mí sobre la filosofía de Rails es "Convención sobre configuración", esto acaba traduciendose en que sin apenas configuración, y escribiendo de manera correcta y en el lugar correcto (mayúsculas en su sitio, singulares y plurales, etc) rails hace su magia y enseguida todo funciona. <br/> <br/>
+Un punto importante para mí sobre la filosofía de Rails es "Convención sobre configuración", esto acaba traduciendose en que sin apenas configuración, y escribiendo de manera correcta y en el lugar correcto (mayúsculas en su sitio, singulares y plurales, etc) rails hace su magia y enseguida todo funciona.
 
-Algunos de los puntos importantes del stack de esta aplicación en Rails son: <br/>
-- Base de datos con MySQL
-- StimulusJS: framework de javascript
-- SASS: extensión del lenguaje CSS
-- HAML: una manera de escribir HTML limpio y elegante
-- TailwindCSS: framework de CSS
+<br/>
+
+Algunos de los puntos importantes del stack de esta aplicación en Rails son: 
+<br/>
+
+- Base de datos con **MySQL**
+- **StimulusJS**: framework de javascript
+- **SASS**: extensión del lenguaje CSS
+- **HAML**: una manera de escribir HTML limpio y elegante
+- **TailwindCSS**: framework de CSS
+
 <br/><br/>
+
 Otras tecnologías muy importantes en este proyecto son:
 
-
+<br/>
 <div style="width: 100%; background: white; min-height: 120px; text-align: center; margin: 0 0 1rem 0; align: center;">
   <img
     src="https://repository-images.githubusercontent.com/152975883/2001d080-e823-11e9-98c5-27c697c21b4c"
