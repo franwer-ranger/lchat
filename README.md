@@ -47,3 +47,23 @@ Otras tecnologías muy importantes en este proyecto son:
 </div>
 
 >Y la gema que hace posible que los cambios de estado del app se envien a través de los websockets a los clientes es [CableReady](https://cableready.stimulusreflex.com/)
+
+
+<h1 style="margin: 3rem 0;"> Proximamente... </h1>
+
+## Setup entorno local
+
+## Getting started con Ruby on Rails
+
+## Algunas configuraciones
+
+- Configuración TailwindCSS
+- Configuración Webpacker 5
+- Archivos importantes
+- Configuración Devise (gema para la autenticación)
+- Configuración ActionCable y CableReady
+- Utilización de Stimulus Reflex
+
+## Proceso de deployment con Heroku
+
+## Usando el app
