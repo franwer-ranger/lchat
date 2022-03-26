@@ -5,11 +5,11 @@
 ------
 <br/> 
 
-<div style="width: 100%; background: white; text-align: center; margin: 1rem auto; align: center;">
+<div align=center style="width: 100%; background: white; text-align: center; margin: 1rem auto; align: center;">
   <img
     src="https://upload.wikimedia.org/wikipedia/commons/6/62/Ruby_On_Rails_Logo.svg"
     alt="Ruby on Rails"
-    style="margin: 1rem auto; width: 250px; height: 120px;">
+    style="margin: 2rem auto; width: 350px; height: 150px;">
 </div>
 
 >[Ruby on Rails](https://rubyonrails.org/) es un framework MVC (Modelo Vista Controlador) de Ruby que proporciona herramientas para crear una aplicación web fullstack de una manera bastante sencilla, ya que asume un monton de cosas que necesitas para empezar a hacer una aplicación.<br/> 
@@ -26,11 +26,10 @@ Algunos de los puntos importantes del stack de esta aplicación en Rails son:
 - **HAML**: una manera de escribir HTML limpio y elegante
 - **TailwindCSS**: framework de CSS
 
-<br/><br/>
+<br/>
 
 Otras tecnologías muy importantes en este proyecto son:
 
-<br/>
 <div style="width: 100%; background: white; min-height: 120px; text-align: center; margin: 0 0 1rem 0; align: center;">
   <img
     src="https://repository-images.githubusercontent.com/152975883/2001d080-e823-11e9-98c5-27c697c21b4c"
