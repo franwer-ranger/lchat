@@ -1,0 +1,21 @@
+.session{ style: "background-image: url('#{ image_url('sign_in_bg.jpg') }');", data: { controller: "devise-sessions" } }
+  .session__container
+    .session__title
+      Iniciar sesión
+    .session__subtitle
+      El mejor chat del mundo es este, amigo
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html:{ class: 'session__form', data: { 'devise-sessions-target': 'form' } }) do |f|
+      .session__text-field
+        .session__label
+          Email
+        = f.email_field :email, required: true, data: { action: 'change->devise-sessions#inputChanged keyup->devise-sessions#inputChanged' }
+      .session__text-field
+        .session__label
+          Contraseña
+        = f.password_field :password, required: true, data: { action: 'change->devise-sessions#inputChanged keyup->devise-sessions#inputChanged' }
+      = f.submit 'Iniciar sesión', disabled: true, class: 'session__button session__button--disable', 'data-devise-sessions-target': 'button'
+      .session__navigate
+        .session__notice 
+          ¿Eres nuevo/a en lchat?
+        .session__links
+          = link_to 'Crear cuenta', new_registration_path(resource_name), class: 'link'

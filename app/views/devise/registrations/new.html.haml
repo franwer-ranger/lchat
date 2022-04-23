@@ -1,0 +1,21 @@
+.registration{ style: "background-image: url('#{ image_url('sign_up_bg.jpg') }');", data: { controller: "devise-registrations" } }
+  .registration__container
+    .registration__title
+      Crear cuenta
+    .registration__subtitle
+      El mejor chat del mundo es este, amigo
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html:{ class: 'registration__form', data: { 'devise-registrations-target': 'form' } }) do |f|
+      .registration__text-field
+        .registration__label
+          Email
+        = f.email_field :email, required: true, data: { action: 'change->devise-registrations#inputChanged keyup->devise-registrations#inputChanged' }
+      .registration__text-field
+        .registration__label
+          Contraseña
+        = f.password_field :password, required: true, data: { action: 'change->devise-registrations#inputChanged keyup->devise-registrations#inputChanged' }
+      = f.submit 'Empezar', disabled: true, class: 'registration__button registration__button--disable', 'data-devise-registrations-target': 'button'
+      .registration__navigate
+        .registration__notice 
+          ¿Ya tienes cuenta?
+        .registration__links
+          = link_to 'Inicia sesión', new_session_path(resource_name), class: 'link'

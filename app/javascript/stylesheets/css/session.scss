@@ -1,0 +1,53 @@
+.session {
+  @apply flex justify-center items-center md:relative md:justify-start;
+  @apply bg-center bg-no-repeat bg-cover;
+  height: 100vh;
+  &__container {
+    @apply w-10/12 rounded-lg bg-white bg-opacity-95 p-6 md:px-10;
+    @apply md:absolute;
+    right: 18%;
+    max-width: 400px;
+  }
+  &__logo {
+    @apply h-8 mb-4 md:mb-8;
+  }
+  &__title {
+    @apply text-black mt-2 font-semibold text-xl;
+  }
+  &__subtitle {
+    @apply text-gray-400 text-xs;
+  }
+  &__form {
+    @apply mt-3 flex flex-col justify-start;
+  }
+  &__text-field {
+    @apply w-full my-1;
+    & input {
+      @apply w-full px-3 py-2 my-1 outline-none rounded text-sm;
+      border: 1px solid #C4C4C4;
+      -webkit-appearance: none;
+      &:focus {
+        @apply border-purple-600;
+      }
+    }
+  }
+  &__label {
+    @apply my-1 text-sm;
+  }
+  &__button {
+    @apply flex items-center justify-center px-4 py-2 text-sm border-none rounded my-2;
+    width: fit-content;
+    &--disable {
+      @apply bg-gray-200 text-gray-500 cursor-not-allowed;
+    }
+    &--active {
+      @apply bg-purple-600 text-white cursor-pointer;
+    }
+  }
+  &__navigate {
+    @apply text-black text-xs mb-4 md:mb-10 mt-2;
+  }
+  &__notice, &__links {
+    @apply inline-block;
+  }
+}
