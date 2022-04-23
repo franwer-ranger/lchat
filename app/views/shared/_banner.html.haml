@@ -1,0 +1,8 @@
+.banner{ class: "banner--#{type}", data: { controller: 'shared--banner' }, style: "border-color: #{banner_border_color(type)};" }
+  .banner__icon{ class: "banner__icon--#{type}" , style: "color: #{banner_border_color(type)};"}
+    %i{ class: banner_icon(type) }
+  .banner__info
+    .banner__title= title
+    .banner__description= description
+  .banner__close{ data: { action: 'click->shared--banner#close' } }
+    %i.fas.fa-window-close

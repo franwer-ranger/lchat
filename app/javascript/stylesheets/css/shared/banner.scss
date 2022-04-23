@@ -1,0 +1,18 @@
+.banner {
+  @apply p-4 bg-white bg-opacity-95 border-t-4 z-50 fixed left-1/2 top-2 rounded shadow m-auto md:w-10/12 w-11/12;
+  @apply flex items-start justify-start;
+  transform: translateX(-50%);
+  z-index: 9999;
+  &__icon {
+    @apply px-4;
+  }
+  &__title {
+    @apply font-semibold;
+  }
+  &__description {
+    font-size: 14px;
+  }
+  &__close {
+    @apply ml-3 text-xl absolute right-3 md:right-6 top-2 p-1 cursor-pointer text-gray-400 hover:text-black;
+  }
+}

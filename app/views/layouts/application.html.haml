@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Lchat
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    - if flash[:alert]
+      = render './shared/banner', type: 'alert', title: 'Alerta', description: flash[:alert]
+    - if flash[:notice]
+      = render './shared/banner', type: 'notice', title: 'Notificación', description: flash[:notice]
+    - if resource.errors.any?
+      = render './shared/banner', type: 'error', title: 'Error', description: resource.errors.full_messages.join('. ')
+    = yield
