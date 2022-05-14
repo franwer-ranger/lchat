@@ -1,0 +1,22 @@
+.sidebar-chatrooms{ data: { controller: 'sidebar-chatroom' } }
+  .sidebar-chatrooms__header
+    - if current_user.logo.attached?
+      = image_tag current_user.logo, class: 'sidebar-chatrooms__avatar'
+    - else 
+      .sidebar-chatrooms__avatar-empty
+        = current_user.username.chr.capitalize
+    = link_to destroy_user_session_path, method: 'delete', class: 'sidebar-chatrooms__sign-out' do
+      %i.fa-solid.fa-right-from-bracket
+      %span Cerrar Sesión
+  - if current_user.admin?
+    = render 'shared/sidebar_form'
+  .sidebar-chatrooms__container
+    - @chatrooms.each do |chatroom|
+      .sidebar-chatrooms__chatroom
+        = link_to chatroom_chatroom_user_path(chatroom), method: :post, class: 'sidebar-chatrooms__chatroom-link' do
+          .sidebar-chatrooms__chatroom-name 
+            = chatroom.name
+          - if current_user.chatrooms.include?(chatroom)
+            .sidebar-chatrooms__joined
+        = link_to chatroom_chatroom_user_path(chatroom), method: :delete, class: 'sidebar-chatrooms__leave' do
+          %i.fa-solid.fa-right-from-bracket

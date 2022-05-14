@@ -1,0 +1,41 @@
+.chatrooms{ data: { controller: "chatrooms" }, style: "background-image: url('#{ image_url('fondo_chatrooms_index.jpg') }');"}
+  .chatrooms__container
+    - @chatrooms.each do |chatroom|
+      .chatrooms__chatroom-item 
+        = link_to chatroom, class: 'chatrooms__chatroom-container' do
+          .chatrooms__chatroom-name 
+            = chatroom.name
+          .chatrooms__chatroom-count 
+            = "#{chatroom.users.length} usuarios" 
+        - if current_user.admin?
+          .chatrooms__chatroom-admin 
+            = link_to edit_chatroom_path(chatroom), class: "chatrooms__chatroom-icon" do 
+              %i.fas.fa-edit
+            = link_to chatroom, method: :delete, data: { confirm: '¿Estás seguro de que quieres eliminar esta sala?' }, class: "chatrooms__chatroom-icon" do
+              %i.fas.fa-trash-alt
+
+
+
+-# %h1 Listing chatrooms
+
+-# %table
+-#   %thead
+-#     %tr
+-#       %th Name
+-#       %th
+-#       %th
+-#       %th
+
+-#   %tbody
+-#     - @chatrooms.each do |chatroom|
+-#       %tr
+-#         %td= chatroom.name
+-#         %td= link_to 'Show', chatroom
+-#         %td= link_to 'Edit', edit_chatroom_path(chatroom)
+-#         %td= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' }
+
+-# %br
+
+-# = link_to 'New Chatroom', new_chatroom_path
+
+-# = link_to 'Cerrar Sesión', destroy_user_session_path, method: 'delete'

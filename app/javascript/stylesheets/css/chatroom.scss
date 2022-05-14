@@ -1,0 +1,17 @@
+@import "./variables.scss";
+.chatroom{
+  @apply bg-cover w-full h-full bg-no-repeat flex flex-col items-center justify-center flex-1;
+  &__header{
+    @apply flex-none p-6 font-syne font-bold text-xl bg-gray-50 border-b border-gray-200;
+    width: calc(100vw - #{$chatroom-sidebar-width});
+  }
+  &__user-list {
+    @apply font-inter text-xs font-normal overflow-ellipsis whitespace-nowrap overflow-hidden;
+  }
+  &__container{
+    @apply flex-1 w-full;
+  }
+  &__footer{
+    @apply flex-none w-full p-6;
+  }
+}

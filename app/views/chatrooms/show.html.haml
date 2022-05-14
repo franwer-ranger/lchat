@@ -1,0 +1,12 @@
+.chatroom{ data: { controller: "chatroom" }, style: "background-image: url('#{ image_url('fondo_chatrooms_index.jpg') }');"}
+  .chatroom__header
+    .chatroom__name
+      = @chatroom.name
+    .chatroom__user-list
+      - @chatroom.users.each_with_index do |user, index|
+        - if index + 1 != @chatroom.users.length
+          = "#{user.username}, "
+        - else 
+          = "#{user.username}."
+  .chatroom__container
+  .chatroom__footer
