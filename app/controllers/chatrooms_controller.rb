@@ -10,6 +10,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatrooms = Chatroom.all
+    @message = Message.new chatroom: @chatroom, user: current_user
   end
 
   def new

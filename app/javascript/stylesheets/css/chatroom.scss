@@ -9,9 +9,42 @@
     @apply font-inter text-xs font-normal overflow-ellipsis whitespace-nowrap overflow-hidden;
   }
   &__container{
-    @apply flex-1 w-full;
+    @apply flex-1 w-full px-8 py-2 overflow-y-scroll;
+  }
+  &__line {
+    @apply w-full flex;
+  }
+  &__message-container{
+    @apply flex flex-col my-1;
+    max-width: 40%;
+  }
+  &__message-user{
+    @apply text-xs px-2;
+  }
+  &__time-ago{
+    @apply text-gray-400;
+    font-size: 9px;
+  }
+  &__message {
+    @apply rounded-lg border px-2 py-1;
+    &--me{
+      @apply border-purple-600 bg-purple-300;
+    }
+    &--other {
+      @apply border-gray-300 bg-gray-200;
+    }
   }
   &__footer{
-    @apply flex-none w-full p-6;
+    @apply flex-none w-full py-4 px-8 bg-gray-50 border-t border-gray-200 flex gap-4;
+  }
+  &__field {
+    @apply flex-1;
+  }
+  &__input{
+    @apply rounded-lg w-full px-4 py-2 border border-gray-200 appearance-none h-10;
+    @apply focus:border-purple-600 focus:outline-none outline-none;
+  }
+  &__button {
+    @apply px-4 py-2 rounded-lg font-syne bg-purple-300 hover:bg-purple-400 cursor-pointer;
   }
 }
