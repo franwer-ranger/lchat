@@ -1,0 +1,8 @@
+.chatroom__line{ class: current_user.messages.include?(message) ? "justify-end" : "justify-start", "data-chatroom-target": "messages" }
+  .chatroom__message-container{ class: current_user.messages.include?(message) ? "items-end" : "items-start" }
+    .chatroom__message-user
+      = message.user == current_user ? "Yo" : message.user.username
+    .chatroom__message{ class: current_user.messages.include?(message) ? "chatroom__message--me" : "chatroom__message--other" }
+      = message.body
+      .chatroom__time-ago 
+        = time_ago_in_words(message.created_at)

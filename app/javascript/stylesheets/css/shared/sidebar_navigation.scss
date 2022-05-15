@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+.sidebar-chatrooms {
+  @apply h-full border-r border-gray-300 bg-gray-50 flex-none;
+  width: $chatroom-sidebar-width;
+  &__header {
+    @apply flex items-center justify-between p-6 border-b border-gray-300;
+  }
+  &__avatar {
+    @apply w-14 h-14 rounded-full object-cover;
+  }
+  &__avatar-empty {
+    @apply w-14 h-14 rounded-full flex items-center justify-center bg-purple-600 text-white;
+  }
+  &__sign-out {
+    @apply flex gap-2 items-center;
+  }
+  &__chatroom {
+    @apply w-full border-b border-gray-300 text-lg font-medium bg-white relative;
+  }
+  &__chatroom-link {
+    @apply hover:bg-gray-200 flex items-center justify-center cursor-pointer py-5;
+  }
+  &__joined {
+    @apply w-4 h-4 rounded-full bg-green-500 absolute left-3;
+    top: 40%;
+  }
+  &__leave {
+    @apply absolute right-3 top-1/3 hover:text-purple-600;
+  }
+}

@@ -1,0 +1,24 @@
+.chatroom{ data: { controller: "chatroom" }, style: "background-image: url('#{ image_url('fondo_chatrooms_index.jpg') }');"}
+  .chatroom__header
+    .chatroom__name
+      = @chatroom.name
+    .chatroom__user-list
+      - @chatroom.users.each_with_index do |user, index|
+        - if index + 1 != @chatroom.users.length
+          = "#{user.username}, "
+        - else 
+          = "#{user.username}."
+  .chatroom__container{ data: { "chatroom-target": 'container' } }
+    - @chatroom.messages.each do |message|
+      .chatroom__line{ class: current_user.messages.include?(message) ? "justify-end" : "justify-start" }
+        .chatroom__message-container{ class: current_user.messages.include?(message) ? "items-end" : "items-start" }
+          .chatroom__message-user
+            = message.user == current_user ? "Yo" : message.user.username
+          .chatroom__message{ class: current_user.messages.include?(message) ? "chatroom__message--me" : "chatroom__message--other" }
+            = message.body
+            .chatroom__time-ago 
+              = time_ago_in_words(message.created_at)
+  = form_for @message, url: chatroom_message_path(@chatroom), html: { class: 'chatroom__footer' } do |f|
+    .chatroom__field
+      = f.text_area :body, class: 'chatroom__input', placeholder: "Escribe aquí tu mensaje", autofocus: true
+    = f.submit 'Enviar', class: 'chatroom__button'

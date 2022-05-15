@@ -7,6 +7,10 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html:{ class: 'registration__form', data: { 'devise-registrations-target': 'form' } }) do |f|
       .registration__text-field
         .registration__label
+          Nick
+        = f.text_field :username, required: true, autofocus: true, data: { action: 'change->devise-registrations#inputChanged keyup->devise-registrations#inputChanged' }
+      .registration__text-field
+        .registration__label
           Email
         = f.email_field :email, required: true, data: { action: 'change->devise-registrations#inputChanged keyup->devise-registrations#inputChanged' }
       .registration__text-field

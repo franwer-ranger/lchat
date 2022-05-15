@@ -1,0 +1,20 @@
+.sidebar-chatroom-form {
+  @apply w-full flex flex-col gap-3 border-b border-gray-300 p-4;
+  &__field {
+    @apply w-full my-1;
+  }
+  &__input {
+    @apply w-full px-3 py-2 my-1 outline-none rounded text-sm;
+    border: 1px solid #C4C4C4;
+    -webkit-appearance: none;
+    &:focus {
+      @apply border-purple-600;
+    }
+  }
+  &__label {
+    @apply my-1 text-sm;
+  }
+  &__button {
+    @apply px-4 py-2 text-sm border-none rounded bg-purple-600 text-white cursor-pointer;
+  }
+}

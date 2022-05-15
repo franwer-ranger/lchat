@@ -5,7 +5,7 @@ import anime from 'animejs/lib/anime.es.js'
 export default class extends Controller {
   
   connect() {
-    setTimeout(() => this.close(), 5000);
+    setTimeout(() => this.close(), 3000);
   }
   
   close() {

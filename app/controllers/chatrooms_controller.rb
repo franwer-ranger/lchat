@@ -1,0 +1,68 @@
+class ChatroomsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_chatroom, only: %i[ show edit update destroy ]
+
+  def index
+    @chatrooms = Chatroom.all
+    @chatroom = Chatroom.new
+  end
+
+
+  def show
+    @chatrooms = Chatroom.all
+    @message = Message.new chatroom: @chatroom, user: current_user
+  end
+
+  def new
+    @chatroom = Chatroom.new
+  end
+
+  def edit
+    @chatrooms = Chatroom.all
+  end
+
+  def create
+    @chatroom = Chatroom.new(chatroom_params)
+
+    respond_to do |format|
+      if @chatroom.save
+        format.html { redirect_to chatrooms_path, notice: "Sala creada correctamente." }
+        format.json { render :show, status: :created, location: @chatroom }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @chatroom.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @chatroom.update(chatroom_params)
+        format.html { redirect_to chatroom_url(@chatroom), notice: "Sala actualizada correctamente." }
+        format.json { render :show, status: :ok, location: @chatroom }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @chatroom.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @chatroom.destroy
+
+    respond_to do |format|
+      format.html { redirect_to chatrooms_url, notice: "Sala eliminada correctamente." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+
+    def set_chatroom
+      @chatroom = Chatroom.find(params[:id])
+    end
+
+    def chatroom_params
+      params.require(:chatroom).permit(:name)
+    end
+end

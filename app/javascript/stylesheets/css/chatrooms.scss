@@ -1,0 +1,21 @@
+.chatrooms{
+  @apply bg-cover w-full h-full bg-no-repeat flex items-center justify-center flex-1;
+  &__container {
+    @apply p-5 bg-gray-100 bg-opacity-30 rounded-lg;
+    @apply flex flex-col gap-8 items-center;
+  }
+  &__chatroom-item {
+    @apply flex items-center justify-center gap-4;
+  }
+  &__chatroom-container {
+    @apply flex flex-1 justify-between items-center p-4 pl-8 w-full;
+    @apply shadow-md rounded cursor-pointer hover:bg-gray-200 border border-gray-200;
+    min-width: 500px;
+  }
+  &__chatroom-admin {
+    @apply flex items-center gap-4 flex-none;
+  }
+  &__chatroom-icon {
+    @apply hover:text-purple-600 text-gray-500;
+  }
+}
