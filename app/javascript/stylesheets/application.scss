@@ -9,9 +9,21 @@ input:-webkit-autofill:active{
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
+html {
+  @apply h-full;
+}
+
+body {
+  @apply text-base h-full;
+}
+
+a, a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
 .app-container {
-  @apply w-full overflow-y-scroll relative flex;
-  height: 100vh;
+  @apply w-full overflow-y-scroll relative h-full;
+  @apply pl-0 md:pl-80 transition-all delay-300;
 }
 
 .link {

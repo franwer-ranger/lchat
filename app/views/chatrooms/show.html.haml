@@ -8,8 +8,9 @@
           = "#{user.username}, "
         - else 
           = "#{user.username}."
-  .chatroom__container{ id: "message-list", data: { "chatroom-target": 'container' } }
-    = render partial: "message", collection: @chatroom.messages
+  .chatroom__container{ id: "message-list", data: { "chatroom-target": 'container', user_id: current_user.id, chatroom_id: @chatroom.id } }
+    - @chatroom.messages.each do |message|
+      = render partial: "messages/message", locals: { message: message }
   = form_for @message, url: chatroom_message_path(@chatroom), html: { class: 'chatroom__footer' } do |f|
-    = f.text_area :body, class: 'chatroom__input', placeholder: "Escribe aquí tu mensaje", autofocus: true
+    = f.text_field :body, class: 'chatroom__input', placeholder: "Escribe aquí tu mensaje", autofocus: true, data: { 'chatroom-target': 'input' }
     = f.submit 'Enviar', class: 'chatroom__button'
