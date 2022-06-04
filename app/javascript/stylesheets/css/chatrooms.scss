@@ -9,7 +9,8 @@
   }
   &__chatroom-container {
     @apply flex flex-1 justify-between items-center p-4 pl-8 w-full;
-    @apply shadow-md rounded cursor-pointer hover:bg-gray-200 border border-gray-200;
+    @apply shadow-md rounded cursor-pointer bg-gray-200 border border-gray-200;
+    @apply transition-all hover:border-black hover:bg-black hover:bg-opacity-80 hover:text-white;
     min-width: 500px;
   }
   &__chatroom-admin {

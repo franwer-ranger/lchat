@@ -1,10 +1,12 @@
 puts "Creando usuarios..."
 User.create email: "admin@lchat.io", username: "franbg98", password: "123123", rol: :admin
 
+user_names = ["fran", "Compañero", "Devel", "YokSe", "User", "Pablete", "uno"]
+user_lastnames = ["98", "RT", "sb99", "Volador", "seeds", "DePrueba", "Jr", "😎"]
 users_length = 50
 
 for index in 1..users_length do
-  User.where(rol: :client, email:"client#{index}@lchat.io", username: "cliente#{index}").first_or_create(password: "123123")
+  User.where(rol: :client, email:"client#{index}@lchat.io", username: "#{user_names.sample}#{user_lastnames.sample}#{index}").first_or_create(password: "123123")
 end
 
 puts "Usuarios creados."
