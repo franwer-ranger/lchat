@@ -1,8 +1,7 @@
-@import '../variables.scss';
 
 .sidebar-chatrooms {
-  @apply h-full border-r border-gray-300 bg-gray-50 flex-none;
-  width: $chatroom-sidebar-width;
+  @apply absolute top-0 left-0 h-full border-r border-gray-300 bg-gray-50 flex-none;
+  @apply w-0 opacity-0 md:w-80 md:opacity-100 transition-all delay-300;
   &__header {
     @apply flex items-center justify-between p-6 border-b border-gray-300;
   }

@@ -1,0 +1,8 @@
+.chatroom__line.justify-end
+  .chatroom__message-container.items-end
+    .chatroom__message-user
+      = message.user.username
+    .chatroom__message.chatroom__message--me
+      = message.body
+      .chatroom__time-ago 
+        = time_ago_in_words(message.created_at)

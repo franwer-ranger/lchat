@@ -1,11 +1,12 @@
 class MessagesController < ApplicationController
+  include CableReady::Broadcaster
+
   before_action :authenticate_user!
   before_action :set_chatroom
 
   def create
-    @message = Message.new(message_params.merge(user: current_user, chatroom: @chatroom))
-    @message.save
-    redirect_to chatroom_path(@chatroom)
+    @message = Message.create(message_params.merge(user: current_user, chatroom: @chatroom))
+    SendMessageJob.perform_later(@message)
   end
 
   private 

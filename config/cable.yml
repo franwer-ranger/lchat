@@ -1,5 +1,7 @@
 development:
-  adapter: async
+  dapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: lchat_development
 
 test:
   adapter: test

@@ -2,7 +2,7 @@
   .chatrooms__container
     - @chatrooms.each do |chatroom|
       .chatrooms__chatroom-item 
-        = link_to chatroom, class: 'chatrooms__chatroom-container' do
+        = link_to chatroom_chatroom_user_path(chatroom), method: :post, class: 'chatrooms__chatroom-container' do
           .chatrooms__chatroom-name 
             = chatroom.name
           .chatrooms__chatroom-count 
